@@ -1,0 +1,34 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = [""]
+description = ""
+language = "javascript"
+manifest_version = 2
+#name = "add--remove-or-change-http-headers"
+name = "otto-dynamic-csp"
+service_id = "6N6DvpRuN8B8L6z93q4O8P"
+
+[local_server]
+  [local_server.dictionaries]
+      [local_server.dictionaries.otto]
+        file = "config.json"
+        format = "json"
+
+  [local_server.backends]
+
+    [local_server.backends.origin_0]
+      url = "https://delicate-dew-0422.on.fleek.co"
+    [local_server.backends.origin_1]
+      url = "https://dev-api.devconops.com"
+
+[setup]
+
+  [setup.backends]
+
+    [setup.backends.origin_0]
+      address = "delicate-dew-0422.on.fleek.co"
+      port = 443
+    [setup.backends.origin_1]
+      address = "dev-api.devconops.com"
+      port = 443
