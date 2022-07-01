@@ -5,8 +5,7 @@ authors = [""]
 description = ""
 language = "javascript"
 manifest_version = 2
-#name = "add--remove-or-change-http-headers"
-name = "otto-dynamic-csp"
+name = "otto-edge"
 service_id = "6N6DvpRuN8B8L6z93q4O8P"
 
 [local_server]
@@ -20,7 +19,7 @@ service_id = "6N6DvpRuN8B8L6z93q4O8P"
     [local_server.backends.origin_0]
       url = "https://delicate-dew-0422.on.fleek.co"
     [local_server.backends.origin_1]
-      url = "https://dev-api.devconops.com"
+      url = "https://dev-otto-customer-scripts.s3.us-east-2.amazonaws.com/"
 
 [setup]
 
@@ -30,5 +29,5 @@ service_id = "6N6DvpRuN8B8L6z93q4O8P"
       address = "delicate-dew-0422.on.fleek.co"
       port = 443
     [setup.backends.origin_1]
-      address = "dev-api.devconops.com"
+      address = "dev-otto-customer-scripts.s3.us-east-2.amazonaws.com"
       port = 443

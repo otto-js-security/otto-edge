@@ -1,19 +1,19 @@
 {
     "dependencies": {
         "@fastly/js-compute": "^0.2.1",
-        "base-64": "^1.0.0"
+        "base-64": "^1.0.0",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.9.2"
     },
     "devDependencies": {
         "core-js": "^3.19",
         "crypto-browserify": "3.12.0",
         "eslint": "^8.2",
-        "stream-browserify": "3.0.0",
-        "webpack": "^5.62",
-        "webpack-cli": "^4.9"
+        "stream-browserify": "3.0.0"
     },
     "license": "MIT",
     "main": "src/index.js",
-    "name": "add--remove-or-change-http-headers",
+    "name": "otto-edge",
     "scripts": {
         "build": "js-compute-runtime --skip-pkg bin/index.js bin/main.wasm",
         "deploy": "npm run build && fastly compute deploy",
