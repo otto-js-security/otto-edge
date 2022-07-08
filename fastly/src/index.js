@@ -2,12 +2,11 @@
 import { decode } from "base-64"
 
 const handler = async (event) => {
-  // ENTER OTTO API KEY
   const dict = new Dictionary("otto")
   const ottoKey=dict.get("key") 
   const ottoHost=dict.get("apihost") 
   const siteHost=dict.get("host") 
-
+  const replaceReportUri=dict.get("report-uri-host")
 
 
   // Get the request from the client.
@@ -26,7 +25,11 @@ const handler = async (event) => {
 
   if(apiRes.status == "200"){
     const csp = await apiRes.json()
-    beresp.headers.set("content-security-policy", csp.policy);
+    let policy = csp.policy;
+    if(replaceReportUri){
+      policy = csp.policy.replace("report-uri https://analyticssystems.net", `report-uri https://${replaceReportUri}`);
+    }
+    beresp.headers.set("content-security-policy", policy);
   }
 
 
@@ -49,7 +52,7 @@ function getCSPUrl(url, ottoHost, ottoKey){
 function getRevsionIdURL(url, ottoHost, ottoKey){
   const revId = getRevisionId(url)
   if(revId){
-    return `https://${ottoHost}/csp/${ottoKey}-${revId}.json`
+    return `https://${ottoHost}/csp/${ottoKey}/${revId}.json`
   }else{
     return null
   }
