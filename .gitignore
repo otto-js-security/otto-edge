@@ -1,3 +1,5 @@
 fastly/node_modules/*
 fastly/node_modules/*.*
 */node_modules/*
+fastly/bin/*
+fastly/pkg/*
