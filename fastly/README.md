@@ -5,4 +5,7 @@
 
 ### To run locally
 -   `fastly compute serve`
--
+
+### Push to fastly
+- `fastly compute publish -s <<Your Service Id>>`
+
