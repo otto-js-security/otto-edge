@@ -26,8 +26,8 @@ service_id = "6N6DvpRuN8B8L6z93q4O8P"
   [setup.backends]
 
     [setup.backends.origin_0]
-      address = "delicate-dew-0422.on.fleek.co"
+      address = "otto-cus-liked-gopher-1380886465.us-east-2.elb.amazonaws.com"
       port = 443
     [setup.backends.origin_1]
-      address = "dev-otto-customer-scripts.s3.us-east-2.amazonaws.com"
+      address = "otto-customer-scripts.s3.us-east-2.amazonaws.com"
       port = 443
