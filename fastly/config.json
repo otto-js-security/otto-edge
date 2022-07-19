@@ -1,6 +1,5 @@
 {
-    "host": "delicate-dew-0422.on.fleek.co",
-    "key" : "d43421f3-74d8-45ba-8b8e-0fa612aa6350",
-    "apihost":"otto-customer-scripts.s3.us-east-2.amazonaws.com",
-    "report-uri-host":"api.devconops.com"
+    "host": "your-host-name.com",
+    "key" : "your-otto-site-key",
+    "apihost":"otto-customer-scripts.s3.us-east-2.amazonaws.com"
 }
